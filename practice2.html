@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Практична робота №2</title>
+</head>
+<body>
+
+<h1>JavaScript. Практична робота №2</h1>
+<p>Результати у консолі браузера.</p>
+
+<script>
+let user = {};
+
+user.name = "Марк";
+user.surname = "Сміт";
+user.name = "Тарас";
+
+delete user.name;
+console.log("Завдання 1:");
+console.log(user);
+
+
+function isEmpty(obj) {
+    for (let key in obj) {
+        return false;
+    }
+    return true;
+}
+
+console.log("Завдання 2:");
+console.log(isEmpty({}));
+console.log(isEmpty({ name: "Тарас" }));
+
+
+let salaries = {
+    Jarik: 1000,
+    Anna: 1600,
+    Miko: 1300
+};
+
+let sum = 0;
+for (let key in salaries) {
+    sum += salaries[key];
+}
+
+console.log("Завдання 3:");
+console.log(sum);
+
+
+function multiplyNumeric(obj) {
+    for (let key in obj) {
+        if (typeof obj[key] === "number") {
+            obj[key] *= 2;
+        }
+    }
+}
+
+let menu = {
+    width: 200,
+    height: 300,
+    title: "My menu"
+};
+
+multiplyNumeric(menu);
+
+console.log("Завдання 4:");
+console.log(menu);
+</script>
+
+</body>
+</html>

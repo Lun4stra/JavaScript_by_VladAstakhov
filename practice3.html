@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Практична робота №3</title>
+</head>
+<body>
+
+<h1>JavaScript. Практична робота №3</h1>
+<p>Результати у консолі браузера.</p>
+
+<script>
+function random(min, max) {
+    return min + Math.random() * (max - min);
+}
+
+console.log("Завдання 1:");
+console.log(random(1, 5));
+
+
+function isPrime(num) {
+    if (num < 2) {
+        return false;
+    }
+
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+console.log("Завдання 2:");
+console.log(isPrime(7));
+console.log(isPrime(10));
+
+
+function sumTo(n) {
+    let sum = 0;
+
+    if (n >= 1) {
+        for (let i = 1; i <= n; i++) {
+            sum += i;
+        }
+    } else {
+        for (let i = n; i <= 1; i++) {
+            sum += i;
+        }
+    }
+
+    return sum;
+}
+
+console.log("Завдання 3:");
+console.log(sumTo(5));
+console.log(sumTo(-5));
+</script>
+
+</body>
+</html>
