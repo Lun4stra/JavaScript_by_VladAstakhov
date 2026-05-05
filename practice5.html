@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Практична робота №5</title>
+</head>
+<body>
+
+<h1>JavaScript. Практична робота №5</h1>
+<p>Результати у консолі браузера.</p>
+
+<script>
+let styles = ["Jazz", "Blues"];
+console.log(styles);
+
+styles.push("Rock-n-Roll");
+console.log(styles);
+
+let middle = Math.floor((styles.length - 1) / 2);
+styles[middle] = "Classics";
+console.log(styles);
+
+console.log(styles.shift());
+
+styles.unshift("Rap", "Reggae");
+console.log(styles);
+
+function sumInput() {
+    let numbers = [];
+
+    while (true) {
+        let value = prompt("Введіть число:");
+
+        if (value === "" || value === null || !isFinite(value)) break;
+
+        numbers.push(+value);
+    }
+
+    let sum = 0;
+    for (let number of numbers) {
+        sum += number;
+    }
+
+    return sum;
+}
+
+alert("Сума: " + sumInput());
+
+function getMaxSubSum(arr) {
+    let maxSum = 0;
+    let partialSum = 0;
+
+    for (let item of arr) {
+        partialSum += item;
+
+        if (partialSum > maxSum) {
+            maxSum = partialSum;
+        }
+
+        if (partialSum < 0) {
+            partialSum = 0;
+        }
+    }
+
+    return maxSum;
+}
+
+console.log(getMaxSubSum([1, -2, 3, 4, -9, 6])); // 7
+console.log(getMaxSubSum([-1, -2, -3])); // 0
+console.log(getMaxSubSum([2, -1, 2, 3, -9])); // 6
+</script>
+
+</body>
+</html>
