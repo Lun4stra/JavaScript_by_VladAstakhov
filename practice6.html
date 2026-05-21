@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Практична робота №6</title>
+</head>
+<body>
+
+<h1>JavaScript. Практична робота №6</h1>
+<p>Результати у консолі браузера.</p>
+
+<script>
+function unique(arr) {
+    return Array.from(new Set(arr));
+}
+
+let values = ["Hare", "Krishna", "Hare", "Krishna", "Krishna"];
+console.log("Завдання 1:");
+console.log(unique(values));
+
+
+function aclean(arr) {
+    let map = new Map();
+
+    for (let word of arr) {
+        let sorted = word.toLowerCase().split("").sort().join("");
+        map.set(sorted, word);
+    }
+
+    return Array.from(map.values());
+}
+
+let words = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+console.log("Завдання 2:");
+console.log(aclean(words));
+
+
+function countOccurrences(arr) {
+    let map = new Map();
+
+    for (let num of arr) {
+        map.set(num, (map.get(num) || 0) + 1);
+    }
+
+    return map;
+}
+
+console.log("Завдання 3:");
+console.log(countOccurrences([1, 2, 2, 3, 3, 3, 4]));
+
+
+function isUnique(arr) {
+    return new Set(arr).size === arr.length;
+}
+
+console.log("Завдання 4:");
+console.log(isUnique([1, 2, 3, 4]));
+console.log(isUnique([1, 2, 2, 4]));
+</script>
+
+</body>
+</html>

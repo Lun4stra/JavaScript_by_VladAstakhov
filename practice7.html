@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Практична робота №7</title>
+</head>
+<body>
+
+<h1>JavaScript. Практична робота №7</h1>
+<p>Результати у консолі браузера.</p>
+
+<script>
+function sumSalaries(salaries) {
+    let sum = 0;
+
+    for (let salary of Object.values(salaries)) {
+        sum += salary;
+    }
+
+    return sum;
+}
+
+let salaries = {
+    John: 100,
+    Pete: 300,
+    Mary: 250
+};
+
+console.log("Завдання 1:");
+console.log(sumSalaries(salaries));
+
+
+function count(obj) {
+    return Object.keys(obj).length;
+}
+
+let user = {
+    name: "John",
+    age: 30
+};
+
+console.log("Завдання 2:");
+console.log(count(user));
+
+
+let user2 = {
+    name: "John",
+    years: 30
+};
+
+let {
+    name,
+    years: age,
+    isAdmin = false
+} = user2;
+
+console.log("Завдання 3:");
+console.log(name);
+console.log(age);
+console.log(isAdmin);
+</script>
+
+</body>
+</html>
